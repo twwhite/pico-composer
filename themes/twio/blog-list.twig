@@ -1,0 +1,26 @@
+{% include 'global-header.twig' %}
+
+<div id="main" class="blog-list-main" role="main">
+
+    <div class="container"><span class="clear-filter">Clear Filters</span>
+
+        {{ content }}
+        <hr>
+        {% for page in pages("blog")|sort_by("time")|reverse if not page.hidden %}
+            <div class="post">
+                <h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
+
+                <p class="date">{{ page.meta.author }} - {{ page.date_formatted }} - Read time: </p>
+                <div class="tags">
+                  {% for tag in page.meta.Tags %}
+                    <span>{{ tag }}</span>
+                  {% endfor %}
+                </div>
+                <p class="excerpt">{{ page.description }}</p>
+                <div class="preload" style="display:none !important;">{{ page.raw_content }}</div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% include 'global-footer.twig' %}

@@ -1,0 +1,666 @@
+/**
+ * Pico's Default Theme
+ *
+ * Pico's default theme is a bit bare - but that's intentional! The default
+ * theme isn't meant for production use, it's actually a template for you to
+ * design your own theme around.
+ *
+ * Pico is a stupidly simple, blazing fast, flat file CMS.
+ *
+ * @author  Gilbert Pellegrom
+ * @author  Daniel Rudolf
+ * @link    http://picocms.org
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @version 2.1
+ */
+
+
+ /**
+
+ Color Scheme:
+ =================
+ Blue 1:  #31708E
+ Blue 2:  #5085A5
+ Blue 3:  #8FC1E3
+ Green:   #687864
+ White:   #F7F9FB
+ Red:     #DB001D
+
+
+ **/
+
+* {
+    box-sizing: border-box;
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+
+.hidden { display: none !important; }
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0 none;
+}
+
+.slide {
+    overflow-y: hidden !important;
+    -webkit-transition: height .5s ease-in !important;
+            transition: height .5s ease-in !important;
+}
+
+/*** BASIC LAYOUT ***/
+
+html, body { height: 100%; }
+
+body { display: flex; flex-direction: column; }
+#main { flex: 1 0 auto; }
+#header, #footer { flex: 0 0 auto; }
+
+#main {
+    padding: 3em 0 2em;
+}
+
+/*** Custom Tim CSS **/
+#main {
+  background-color: #F7F9FB;
+}
+
+#main>.container {
+  background-color: white;
+  padding: 2rem;
+  min-height: 630px;
+  box-shadow: 0 6px 9px rgba(0,0,0,0.05), 0 6px 9px rgba(0,0,0,0.05);
+  border-radius: 8px;
+}
+.index-main>.container {
+  text-align:center;
+  background-color: white;
+  padding: 2rem;
+}
+
+.index-main ul{
+  margin: auto;
+  padding-bottom: 1.5rem;
+}
+.index-main ul li, .index-main ul {
+  width:max-content;
+}
+
+.index-main img {
+  display: block;
+  margin: auto;
+  border-radius: 50%;
+  max-width: 10rem;
+  /* box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); */
+}
+
+.index-main hr {
+  border: 0.15em solid #E76F51;
+}
+
+#footer p {
+  text-align:center;
+}
+#footer {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+#header img {
+  max-height: 4rem;
+  margin-left: 1rem;
+}
+
+.date {
+  color: #AAA;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.post {
+  margin: 2rem 0 !important;
+}
+
+.blog-list-main h3 {
+  padding: 0;
+  margin: 0;
+}
+.blog-content img{
+  display:block !important;
+  margin: auto;
+  text-align: center;
+}
+
+#public-key {
+  display: none;
+  text-align:left;
+}
+
+#pgp:hover {
+  cursor: pointer;
+  color: #DB001D;
+}
+
+#public-key {
+  text-align: left !important;
+  padding: 1rem;
+  word-wrap: break-word;
+}
+
+a>img:hover{
+  opacity: 0.7;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.tags>span, .tag {
+  background-color: #48c774;
+  opacity: 0.8;
+  display: inline-block;
+  border-radius: 5px;
+  color: white;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 0.1rem;
+}
+
+.clear-filter {
+  display:block;
+  width: max-content;
+  padding: 2px 8px;
+  display:none;
+  background-color: red;
+  font-weight: bold;
+  opacity: 0.7;
+  margin-left:auto;
+  margin-top:-1.8rem;
+  border-radius: 5px;
+  color: white;
+  cursor:pointer;
+}
+
+.tags>span:hover {
+  opacity: 1;
+}
+.clear-filter:hover{
+  opacity: 1;
+}
+
+.post:first-of-type{
+  margin-top:1rem !important;
+  padding-top:0;
+}
+.post p:last-of-type{
+  margin-top: 0.5rem;
+  font-color: #444;
+}
+
+.index-main svg {
+  fill: #666;
+  margin: 0.5rem 1.5rem 0 1.5rem;
+}
+
+.index-main p:last-of-type{
+  text-align: center !important;
+}
+
+.gallery-back, .gallery-forward {
+  display: inline-block;
+  width: auto;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 3rem;
+  top:0;
+  padding-top: 20%;
+}
+.gallery-back{
+  position: absolute;
+  left: 0;
+  height: 100%;
+}
+.gallery-forward {
+  position: absolute;
+  right: 0;
+  height: 100%;
+}
+.gallery-back:hover, .gallery-forward:hover {
+  background-color: rgba(45, 45, 45, 0.33);
+  transition: background-color 0.3s;
+}
+.photo-gallery {
+  position: relative;
+  overflow: hidden;
+}
+.photo-gallery p {
+  margin: 0 !important;
+}
+
+.image-caption {
+  text-align: center;
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+video, embed, object {
+  max-width: 100%;
+  max-height: 90vh;
+}
+.photo-gallery video {
+  width: 100%;
+  height: auto;
+}
+
+
+.night #main {
+  background-color: rgb(27, 30, 31) !important;
+}
+
+.night #main > .container {
+  background-color: rgb(24, 26, 27) !important;
+}
+
+.night h1, .night h2, .night h3, .night h4, .night h5, .night h6 {
+  color: rgb(189, 183, 175) !important;
+}
+
+.night {
+  color: rgb(189, 183, 175) !important;
+}
+
+.night #footer {
+  background: rgb(33, 36, 37) !important;
+  color: rgb(168, 160, 149) !important;
+}
+
+.night .date{
+  color: rgb(178,172,162) !important;
+}
+
+.night .index-main svg {
+  fill:rgb(168, 160, 149) !important;
+}
+
+.night hr {
+  border-color: rgb(51, 55, 57) !important;
+  background-color: rgb(30, 32, 33) !important;
+}
+
+.night #main a {
+  color: rgb(105, 153, 182) !important;
+}
+
+/*** End Custom Tim CSS **/
+
+.container {
+    max-width: 48em;
+    padding: 0 0.5em;
+    margin: 0 auto;
+}
+.widescreen .container { max-width: 72em; }
+
+/* very ugly overflow fix, avoid this whenever possible! */
+#main .container { overflow-x: auto; }
+
+/*** BASIC LAYOUT: HEADER ***/
+
+#header { background: #31708E; }
+
+#title, #logo {
+    float: left;
+    padding: 1em 1em 1em 0;
+}
+
+#title * { margin: 0; color: #fff; }
+#title p { font-style: italic; }
+
+#logo { height: 10.8em; }
+#logo * { display: block; height: 100%; }
+#logo img { min-width: 4.8em; }
+
+#logo + #title h1 { margin: 0.8rem 0; }
+#logo + #title.tagline h1 { margin: 0; }
+
+#nav {
+    padding: 2.4em 0;
+    text-align: right;
+}
+#nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#nav ul li {
+    display: inline-block;
+    margin-left: 1em;
+    padding: 0;
+    font-weight: bold;
+}
+
+#nav a, #nav-toggle { color: #8FC1E3; }
+#nav .active a, #nav a:hover, #nav-toggle:hover { color: #fff; }
+
+#nav-toggle { display: none; }
+
+/* IE8 + IE9 clearfix */
+#header > .container:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/*** BASIC LAYOUT: FOOTER ***/
+
+#footer {
+    background: #eceff1;
+    color: #999;
+}
+
+#footer a { color: #eee; }
+#footer a:hover { color: #fff; }
+
+#footer p {
+    margin: 0;
+    padding: 0.5rem 0;
+}
+#footer {
+  padding: 2rem 0 2rem 0;
+}
+
+#footer .social {
+    float: right;
+    padding: 1.5em 0 1.5em 1em;
+    font-size: 2rem;
+}
+
+/*** BASIC LAYOUT: EXTRA SMALL DEVICES ***/
+
+@media (max-width: 767px) {
+
+/*** Custom Tim CSS ***/
+    .index-main, #main {
+      background-color: white !important;
+    }
+/*** End Custom Tim CSS **/
+
+    .clear-filter {
+      position:fixed;
+      top:1.8rem;
+      right:0;
+      opacity:1 !important;
+      border-top-right-radius: 0;
+    }
+
+    #main { padding: 2em 0 1em; }
+
+    #title, #logo { padding: 2em 1.5em 2em 0; }
+    #logo { height: 8.8em; }
+
+    #nav {
+        clear: both;
+        padding: 0;
+    }
+    #nav ul {
+        padding-bottom: 1em;
+    }
+    #nav ul li {
+        display: block;
+        margin-left: 0;
+        text-align: center;
+    }
+    #nav ul li a {
+        display: block;
+        padding: 0.5em 0;
+    }
+
+    .js #nav-toggle {
+        display: block;
+        float: right;
+        width: 2em;
+        margin: 0.6667em 0;
+        font-size: 1.5rem;
+        line-height: 2em;
+        text-align: center;
+        cursor: pointer;
+    }
+    .js #nav-toggle > * { vertical-align: middle;  }
+
+    #footer p { padding: 3em 0;}
+    #footer .social { padding: 0.5em 0 0.5em 1em; }
+}
+
+/*** TYPOGRAPHY ***/
+
+html { font-size: 16px; }
+
+body {
+    font-family: 'Droid Sans', 'Helvetica', 'Arial', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-variant-ligatures: common-ligatures;
+    text-rendering: optimizeLegibility;
+    font-kerning: normal;
+    color: #444;
+}
+
+p, td, th, li, dd {
+    text-align: left;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+p, hr, table, .table-responsive, ol, ul, dl, dd, pre, blockquote, fieldset {
+    margin-bottom: 1em;
+}
+
+a {
+    color: #5085A5;
+    text-decoration: none;
+    -webkit-transition: color .2s ease-in;
+            transition: color .2s ease-in;
+}
+a:hover { color: #DB001D; }
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.6em;
+    font-weight: bold;
+    color: #444;
+}
+h1 { font-size: 2rem; }
+h2 { font-size: 1.7rem; }
+h3 { font-size: 1.4rem; }
+h4 { font-size: 1.1rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 1rem; font-weight: normal; font-style: italic; }
+
+img { max-width: 100%; }
+
+hr {
+    border: 0.15em solid #f5f5f5;
+    border-radius: 0.3em;
+    background: #f5f5f5;
+}
+
+abbr { text-decoration: underline dotted; }
+
+/*** UTILITIES ***/
+
+.align-left { text-align: left; }
+.align-center { text-align: center; }
+.align-right { text-align: right; }
+.align-justify { text-align: justify; }
+
+.image { display: block; margin: 0 auto; }
+.image.xsmall { width: 20%; }
+.image.small { width: 40%; }
+.image.large { width: 60%; }
+.image.xlarge { width: 80%; }
+.image.float-left { float: left; margin: 1em 2em 1em 0; }
+.image.float-right { float: right; margin: 1em 0 1em 2em; }
+.image img { display: block; width: 100%; }
+
+@media (max-width: 767px) {
+    .image.xsmall { width: 60%; }
+    .image.small { width: 80%; }
+    .image.large, .image.xlarge { width: 100%; }
+    .image.float-left, .image.float-right { float: none; margin: 0 auto; }
+}
+
+/*** TABLES ***/
+
+table { border-spacing: 0; }
+
+td, th {
+    padding: 0.4em 1em;
+    vertical-align: top;
+}
+th {
+    font-weight: bold;
+    text-align: center;
+    background: #f5f5f5;
+    color: #333;
+}
+
+td, th {                                         border: 1px solid #ccc; }
+tr:not(:last-child) td, tr:not(:last-child) th { border-bottom: 0 none; }
+thead tr:last-child th {                         border-bottom: 0 none; }
+td:not(:last-child), th:not(:last-child) {       border-right: 0 none; }
+
+tr:first-child td:first-child, tr:first-child th:first-child { border-top-left-radius: 0.3em; }
+tr:first-child td:last-child, tr:first-child th:last-child {   border-top-right-radius: 0.3em; }
+tbody tr:last-child td:first-child {                           border-bottom-left-radius: 0.3em; }
+tbody tr:last-child td:last-child {                            border-bottom-right-radius: 0.3em; }
+table thead + tbody tr:first-child td {                        border-radius: 0 !important; }
+
+.table-responsive { overflow-x: auto; }
+.table-responsive > table { margin-bottom: 0; }
+
+/*** LISTS ***/
+
+ol, ul {
+    list-style-position: outside;
+    padding-left: 1.5em;
+}
+ol { padding-left: 2.5em; }
+li { padding-left: 0.5em; }
+
+dt { font-weight: bold; }
+dd { margin-left: 2em; }
+
+/*** CODE ***/
+
+code {
+    margin: 0 0.1em;
+    padding: 0.1em 0.2em;
+    border: 1px solid #ccc;
+    border-radius: 0.3em;
+    background: #f5f5f5;
+    font-family: 'Droid Sans Mono', 'Courier New', 'Courier', monospace;
+    font-size: 0.85rem;
+    line-height: 1.9824;
+}
+
+pre {
+    padding: 0 1em;
+    border: 1px solid #ccc;
+    border-radius: 0.3em;
+    background: #f5f5f5;
+}
+pre code {
+    display: block;
+    margin: 0;
+    padding: 1.1111em 0;
+    border: 0 none;
+    background: transparent;
+    overflow-x: auto;
+    line-height: 1.4;
+}
+
+/*** BLOCKQUOTE ***/
+
+blockquote {
+    font-style: italic;
+    margin-left: 1em;
+    padding-left: 1em;
+    border-left: 0.5em solid #f5f5f5;
+}
+
+/*** FORMS ***/
+
+label, fieldset legend { font-weight: bold; }
+
+input:not([type="checkbox"]):not([type="radio"]), button, select, textarea, fieldset, fieldset legend {
+    border: 1px solid #ccc;
+    border-radius: 0.3em;
+    background: #fff;
+    -webkit-transition: none .2s ease-in;
+            transition: none .2s ease-in;
+    -webkit-transition-property: border-color, background, box-shadow;
+            transition-property: border-color, background, box-shadow;
+}
+
+input:not([type="checkbox"]):not([type="radio"]), button, select, textarea {
+    padding: 0.5em 1em;
+    outline: 0 none;
+    font-size: 1rem;
+}
+input:focus:not([type="checkbox"]):not([type="radio"]), button:focus, select:focus, textarea:focus {
+    border-color: #2EAE9B;
+    box-shadow: 0 0 8px #2EAE9B;
+}
+input[type="button"]:focus, input[type="submit"]:focus, input[type="reset"]:focus, button:focus,
+input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover, button:hover {
+    background: #f5f5f5;
+    cursor: pointer;
+}
+
+textarea, select[multiple] {
+    vertical-align: bottom;
+    overflow: auto;
+}
+
+fieldset {
+    padding: 1em;
+    background: #f5f5f5;
+}
+fieldset legend { padding: 0 0.5em; }
+
+fieldset label, fieldset input, fieldset button,
+fieldset select, fieldset textarea {
+    margin: 0.2em 0.5em;
+}
+fieldset label:first-child, fieldset input:first-child, fieldset button:first-child,
+fieldset select:first-child, fieldset textarea:first-child {
+    margin-left: 0;
+}
+fieldset label:last-child, fieldset input:last-child, fieldset button:last-child,
+fieldset select:last-child, fieldset textarea:last-child {
+    margin-right: 0;
+}
+
+/* Firefox input size fix */
+input::-moz-focus-inner, button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
